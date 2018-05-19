@@ -231,7 +231,7 @@ public class TicTacToe {
 
 		show();
 		//play the game
-		while (marksOnGrid < 8 && !hasWon(computerMark) && !hasWon(playerMark)) {
+		while (marksOnGrid < 9 && !hasWon(computerMark) && !hasWon(playerMark)) {
 			
 			//user turn
         	placeUserInput();
