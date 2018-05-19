@@ -225,27 +225,12 @@ public class TicTacToe {
         return false;
 	}
 
-	
-	//----------------------
-	public void showResult() {
-		//shows who lost, won, or tied
-		
-		if (hasWon(computerMark) && !hasWon(playerMark)) {
-            System.out.println("You lost!");
-		} else if (hasWon(playerMark) && !hasWon(computerMark)) {
-            System.out.println("You win!"); //never happens
-		} else {
-            System.out.println("You tied!");
-		}
-	}
-
-
 	//----------------------
 	public void playGame() {
 		//plays the game
 
 		show();
-		
+		//play the game
 		while (marksOnGrid < 8 && !hasWon(computerMark) && !hasWon(playerMark)) {
 			
 			//user turn
@@ -258,6 +243,15 @@ public class TicTacToe {
 			
 			show();
         }
+		
+		//shows who lost, won, or tied
+		if (hasWon(computerMark) && !hasWon(playerMark)) {
+            System.out.println("You lost!");
+		} else if (hasWon(playerMark) && !hasWon(computerMark)) {
+            System.out.println("You win!"); //never happens
+		} else {
+            System.out.println("You tied!");
+		}
 	}
 
 
@@ -267,10 +261,6 @@ public class TicTacToe {
 
 		//play game
         game.playGame();
-        
-        //show winner
-        game.showResult();
-        
 	}
 	
 }
