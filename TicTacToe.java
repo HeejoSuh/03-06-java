@@ -173,20 +173,18 @@ public class TicTacToe {
                 //compare and sets the maximum to a larger value
                 max = Math.max(currentScore, max);
  
-                if(currentScore >= 0){ 
-                	if(nth == 0) {
+                if(nth == 0) {
+			if(currentScore >= 0){ 
                 		computerNextPos = availablePositions.get(index);
-                	}
+                	} else if(index == availablePositions.size()-1 && max < 0){
+                		computerNextPos = availablePositions.get(index);
+            		}
                 }
                 if(currentScore == 1){
                 	board[x][y] = 0; 
                 	break;
                 }
-                if(index == availablePositions.size()-1 && max < 0){
-                	if(nth == 0) {
-                		computerNextPos = availablePositions.get(index);
-            		}
-            	}
+               
             //----------------
             } else if (!computerTurn) {
                 board[x][y] = playerMark;
